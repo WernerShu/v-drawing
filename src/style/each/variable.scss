@@ -1,0 +1,60 @@
+
+$emphasis-theme-color: var(--primary-color); /*  强调主题色 */
+$emphasis-error-color: var(--error-color); /*  异常色 */
+$emphasis-warning-color: var(--warning-color); /*  警告色 */
+$emphasis-success-color: var(--success-color); /*  成功色 */
+$emphasis-info-color: var(--info-color); /*  信息色 */
+
+$light-theme-color: #e0e0e0; /*  主题色一 */
+$dark-theme-color: #001529; /*  主题色二 */
+
+
+$base-color: #e0e0e0; /* 基础底色*/
+$border-color: #e5e5e5; /* 边框颜色*/
+// $font-color-basis:#333; /* 基础字体颜色*/
+
+$aside-bck-color:#333;  /* 侧边栏背景色*/
+$aside-hover-color:#fff; /* 侧边栏hover字体颜色*/
+$aside-color:#e0e0e0; /* 侧边栏默认字体颜色*/
+
+
+/* 浅色背景下黑色 */
+// $title-black:#262626; //标题字体
+// $primary-text-black :#595959; // 主要文本
+// $secondary-text-black :#8C8C8C; // 二级文本
+// $disable-black:#8C8C8C;// 禁用
+// $border-black :#D9D9D9;// 边框
+// $dividers-black:#F0F0F0;// 分割线
+// $background-black :#F5F5F5; // 黑色字体对应的背景
+// $table-header-black:#FAFAFA; // 标头部题问吧
+
+/* 浅色背景下黑色 */
+$title-black:rgba(0,0,0,0.85); //标题字体
+$primary-text-black :rgba(0,0,0,0.65); // 主要文本
+$secondary-text-black :rgba(0,0,0,0.45); // 二级文本
+$disable-black:rgba(0,0,0,0.25);// 禁用
+$border-black :rgba(0,0,0,0.15);// 边框
+$dividers-black:rgba(0,0,0,0.06);// 分割线
+$background-black :rgba(0,0,0,0.04); // 黑色字体对应的背景
+$table-header-black:rgba(0,0,0,0.02); // 标头部题问吧
+
+
+/* 深色色背景下 */
+// $title-white:#DBDBDB;
+// $primary-text-white :#ACACAC;
+// $secondary-text-white :#5A5A5A;
+// $disable-white:#5A5A5A;
+// $border-white:#434343;
+// $dividers-white:#303030;
+// $background-white :#262626;
+// $table-header-white:#1D1D1D;
+
+/* 深色色背景下 */
+$title-white:rgba(255,255,255,0.85);
+$primary-text-white :rgba(255,255,255,0.65);
+$secondary-text-white :rgba(255,255,255,0.45);
+$disable-white:rgba(255,255,255,0.30);
+$border-white:rgba(255,255,255,0.20);
+$dividers-white:rgba(255,255,255,0.12);
+$background-white :rgba(255,255,255,0.08);
+$table-header-white:rgba(255,255,255,0.04);

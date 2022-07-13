@@ -1,0 +1,29 @@
+.DS_Store
+node_modules
+monitor
+
+# local env files
+.env.local
+.env.*.local
+
+
+# Log files
+npm-debug.log*
+package-lock.json
+yarn-debug.log*
+yarn-error.log*
+yarn.lock*
+pnpm-debug.log*
+pnpm-lock.yaml*
+.pnpm-debug.*
+
+
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+

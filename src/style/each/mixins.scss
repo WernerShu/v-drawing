@@ -1,0 +1,74 @@
+/*
+ * @Description:混入
+ * @Date: 2022-04-11 10:55:35
+ */
+
+
+/**
+ * @description: 边框阴影
+ * @param {*}
+ * @return {*}
+ * @author: 舒
+ */
+@mixin shadow ($offset:0px 0px 10px 0px,$color:rgba(216, 216, 216, 0.8)){
+  box-shadow:$offset $color;
+}
+
+/*  超出文本省略号（元素不得是flex） */
+@mixin ellipsis($ellipsis-line: 1) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $ellipsis-line;
+  overflow: hidden;
+}
+
+// 禁止div内文本被选中
+@mixin select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/*  超出文本一行显示 */
+@mixin omit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+// 静止div内文本被选中
+@mixin select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin flex($flex-flow: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-flow: $flex-flow;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin padding($x: 0, $y: 0) {
+  padding: $y $x;
+  box-sizing: border-box;
+}
+
+@mixin bg-image($url) {
+  background-image: url($url);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+
+@mixin colorText($color) {
+  color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  background: linear-gradient(180deg,#FFFFFF, $color);
+  background-clip: text;
+  -webkit-background-clip: text;
+}

@@ -1,0 +1,310 @@
+{
+  "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+  "debug.console.fontFamily": "Meslo LG M for Powerline",
+  "gitlens.gitCommands.closeOnFocusOut": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.editor.enablePreview": false, //关闭快速预览
+  "files.autoSave": "off", //打开自动保存
+  //autoFixedOnSave 设置已废弃，采用如下新的设置
+  //autoFix默认开启，只需输入字符串数组即可
+  "eslint.validate": [
+    "javascript",
+    "vue",
+    "html",
+    "javascriptreact"
+  ],
+  "explorer.confirmDelete": false,
+  // "files.autoSaveDelay": 1500,
+  "terminal.integrated.rendererType": "dom",
+  // "eslint.autoFixOnSave": true,
+  // "editor.formatOnSave": true,
+  "eslint.lintTask.enable": true,
+  "extensions.confirmedUriHandlerExtensionIds": [],
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      // 格式化不加分号
+      "semi": false,
+      // 格式化为单引号
+      "singleQuote": true,
+      "printWidth": 120,
+      "endOfLine": "auto"
+    },
+    "js-beautify-html": {
+      "wrap_attributes": "aligned-multiple",
+      "wrap_line_length”": 120,
+      "end_with_newline": false
+    },
+    "prettyhtml": {
+      "printWidth": 120,
+      "singleQuote": false,
+      "wrapAttributes": false,
+      "sortAttributes": false
+    }
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/*.log": true,
+    "**/*.log*": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/elehukouben": true,
+    "**/.git": true,
+    "**/.gitignore": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "**/.idea": true,
+    "**/.vscode": false,
+    "**/yarn.lock": true,
+    "**/tmp": true,
+    "out": true,
+    "dist": true,
+    "node_modules": true,
+    "CHANGELOG.md": true,
+    "examples": true,
+    "res": true,
+    "screenshots": true,
+    "yarn-error.log": true,
+    "**/.yarn": true
+  },
+  "files.exclude": {
+    "**/.cache": true,
+    "**/.editorconfig": true,
+    "**/.eslintcache": true,
+    "**/bower_components": true,
+    "**/.idea": true,
+    "**/tmp": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.vscode/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/bower_components/**": true,
+    "**/dist/**": true,
+    "**/yarn.lock": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "vue",
+    "sass"
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.parameterHints": true,
+  "editor.parameterHints.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "search.followSymlinks": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "vetur.validation.template": false,
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  "editor.hover.delay": 1000,
+  "fileheader.configObj": {
+    "autoAdd": true, // 默认开启
+    "autoAddLine": 10 // 默认文件超过100行就不再自动添加头部注释
+  },
+  "fileheader.customMade": {
+    "Description": "",
+    "Date": "Do not edit",
+    // "FilePath": "Do not edit"
+  }, // 特效预设，还有 "fireworks", "flames", "magic", "clippy", "simple-rift", "exploding-rift"
+  "fileheader.cursorMode": {
+    //此为函数注释
+    "description": "",
+    "param": "",
+    "return": "",
+    "author": "舒"
+  },
+  "editor.tabSize": 2,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "less.compile": {
+    "outExt": ".wxss"
+  },
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[wxml]": {
+    "editor.defaultFormatter": "qiu8310.minapp-vscode"
+  },
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runhaskell",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  // 将vetur的js格式化工具指定为vscode自带的
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // 移除js语句的分号
+  "javascript.format.semicolons": "remove",
+  // 在函数名后面加上括号，类似这种形式 foo () {}
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.fetchOnPull": true,
+  "editor.tabCompletion": "on",
+  "cssrem.rootFontSize": 10,
+  "cSpell.enableFiletypes": [
+    "vue-sugarss",
+    "wxml"
+  ],
+  "liveServer.settings.donotVerifyTags": true,
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "window.zoomLevel": -1,
+  "i18n-ally.localesPaths": [
+    "src/locales/lang"
+  ],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.namespace": true,
+  "i18n-ally.pathMatcher": "{locale}/{namespaces}.{ext}",
+  "i18n-ally.enabledParsers": [
+    "ts"
+  ],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.displayLanguage": "zh-CN",
+  "i18n-ally.enabledFrameworks": [
+    "vue",
+    "react"
+  ],
+  "cSpell.words": [
+    "vben",
+    "windi",
+    "browserslist",
+    "tailwindcss",
+    "esnext",
+    "antv",
+    "tinymce",
+    "qrcode",
+    "sider",
+    "pinia",
+    "sider",
+    "nprogress",
+    "INTLIFY",
+    "stylelint",
+    "esno",
+    "vitejs",
+    "sortablejs",
+    "mockjs",
+    "codemirror",
+    "iconify",
+    "commitlint",
+    "vditor",
+    "echarts",
+    "cropperjs",
+    "logicflow",
+    "vueuse",
+    "zxcvbn",
+    "lintstagedrc",
+    "brotli",
+    "tailwindcss",
+    "sider",
+    "pnpm",
+    "antd"
+  ]
+}
