@@ -36,6 +36,10 @@ onMounted(() => {
   // canvas.on('mouse:move', mouseMove)
   createText('测试文字')
   createPicture('https://image-static.segmentfault.com/276/474/2764740557-5c2dd81d73227_fix732')
+  createPaintbrush()
+  setTimeout(() => {
+    removePaintbrush()
+  }, 3000)
 })
 
 /* =========================== 钩子集 =========================== */
@@ -92,6 +96,24 @@ const createPicture = (img: Img): void => {
       canvasCreate(oImg)
     })
   }
+}
+
+/* =========================== 画笔集 =========================== */
+interface Paintbrush {
+  color?: string // 笔刷颜色
+  width?: number // 笔刷大小
+}
+
+// 创建画笔
+const createPaintbrush = (object?: Paintbrush) => {
+  canvas.isDrawingMode = true
+  canvas.freeDrawingBrush.color = object?.color ?? 'red'
+  canvas.freeDrawingBrush.width = object?.width ?? 2
+}
+
+// 关闭画笔
+const removePaintbrush = () => {
+  canvas.isDrawingMode = false
 }
 
 /* =========================== 文本集 =========================== */
