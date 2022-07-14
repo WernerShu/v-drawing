@@ -4,46 +4,69 @@
 -->
 <template>
   <div class="body-main">
-    <div class="size">
-      <canvas id="canvas"></canvas>
-    </div>
+    <canvas id="canvas" :width="canvasBaseInfo.canvasWidth" :height="canvasBaseInfo.canvasHeight"></canvas>
   </div>
 </template>
 
 <script setup lang="ts">
 import { fabric } from 'fabric'
-import { onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 
+// 画布对象
 let canvas = null
+
+// 画布基础信息
+const canvasBaseInfo = reactive({
+  canvasWidth: 800,
+  canvasHeight: 800
+})
+
 onMounted(() => {
   canvas = new fabric.Canvas('canvas')
+  createText('测试文字')
+  createPicture('https://image-static.segmentfault.com/276/474/2764740557-5c2dd81d73227_fix732')
 })
-//
-type Img = Element | File | string
-interface ImgOption {
-  left?: 100
-  top?: 100
-  width: 200
-  height: 100
-  angle?: 30
-}
+
+/* =========================== 图片集 =========================== */
+type Img = object | string
+// interface ImgOption {
+//   left?: number
+//   top?: number
+//   width?: number
+//   height?: number
+//   angle?: number
+// }
 
 // 创建图片
-const createPicture = (img: Img, option: ImgOption): void => {
-  console.log('')
+let imgObjList = []
+// const createPicture = (img: Img, option?: ImgOption): void => {
+const createPicture = (img: Img): void => {
+  if (typeof img === 'string') {
+    new fabric.Image.fromURL(img, function (oImg) {
+      canvas.add(oImg)
+      imgObjList.push(oImg)
+    })
+  } else {
+    new fabric.Image.fromObject(img, function (oImg) {
+      canvas.add(oImg)
+      imgObjList.push(oImg)
+    })
+  }
 }
+
+/* =========================== 文本集 =========================== */
 
 type Text = string
 interface TextOption {
-  width: 200 // 文字的宽度
-  height: 20 // 文字的高度
-  top?: 100 // 文字的顶边距离
-  left?: 100 // 文字的左边距离
+  width?: number // 文字的宽度
+  height?: number // 文字的高度
+  top?: number // 文字的顶边距离
+  left?: number // 文字的左边距离
   fill?: string // 文字填充颜色
   fontFamily?: string //字体
-  fontSize: 14 // 字体大小
+  fontSize?: number // 字体大小
   paintFirst?: 'fill' | 'stroke' // 先绘制描边还是填充，默认fill,先绘制填充添加的描边是内描边,修改stroke，将变成外描边
-  strokeWidth?: 1 //边框宽度
+  strokeWidth?: number //边框宽度
   stroke?: string // 边框颜色
   textAlign: 'left' | 'center' | 'right' | 'justify' | 'justify-left' | 'justify-center' | 'justify-right' //对齐方式
   textBackgroundColor?: string // 文字背景颜色
@@ -53,13 +76,16 @@ interface TextOption {
   padding?: number // 内边距
   fontStyle?: 'normal' | 'italic' | 'oblique' // 样式,值有:"normal", "italic" or "oblique",默认normal;
   fontWeight?: number | string // 文字粗细,
-  angle?: 0 // 旋转角度
+  angle?: number // 旋转角度
   // shadow: 文字的阴影,值是new fabric.Shadow()
 }
 
 // 创建文字
-const createText = (text: Text, option: TextOption): void => {
-  console.log('')
+let textObjList = []
+const createText = (text: Text, option?: TextOption): void => {
+  const textObj = new fabric.IText(text, option)
+  textObjList.push(textObj)
+  canvas.add(textObj)
 }
 </script>
 
@@ -68,16 +94,6 @@ const createText = (text: Text, option: TextOption): void => {
   width: 100%;
   height: 100%;
   @include flex();
-  .size {
-    width: 90%;
-    height: 90%;
-  }
-}
-.upper-canvas,
-.canvas-container,
-.lower-canvas {
-  width: 100% !important;
-  height: 100% !important;
 }
 #canvas {
   border-radius: 18px;
