@@ -10,10 +10,16 @@
 
 <script setup lang="ts">
 import { fabric } from 'fabric'
-import { onMounted, reactive } from 'vue'
+import { onMounted, reactive, nextTick } from 'vue'
 
 // 画布对象
 let canvas = null
+
+// 当前操作对象
+let operateObj = null
+
+// 画布中所有对象
+let canvasAllIObj = null
 
 // 画布基础信息
 const canvasBaseInfo = reactive({
@@ -21,12 +27,45 @@ const canvasBaseInfo = reactive({
   canvasHeight: 800
 })
 
+/* =========================== 初始化 =========================== */
 onMounted(() => {
   canvas = new fabric.Canvas('canvas')
+  canvas.on('mouse:down', mouseDown)
+  canvas.on('mouse:up', mouseUp)
+  canvas.on('path:created', pathCreated)
+  // canvas.on('mouse:move', mouseMove)
   createText('测试文字')
   createPicture('https://image-static.segmentfault.com/276/474/2764740557-5c2dd81d73227_fix732')
 })
 
+/* =========================== 钩子集 =========================== */
+
+// 鼠标按下
+const mouseDown = e => {
+  // 获取当前活动对象
+  operateObj = canvas.getActiveObject()
+  // if (e.target) {
+  //   console.log(e.target)
+  // }
+}
+
+// 鼠标弹起
+const mouseUp = e => {
+  // operateObj = canvas.getActiveObject()
+  // if (e.target) {
+  //   console.log(e.target)
+  // }
+}
+
+// 鼠标移动
+// const mouseMove = e => {
+//   console.log(e)
+// }
+
+// 元素创建
+const pathCreated = e => {
+  console.log(e)
+}
 /* =========================== 图片集 =========================== */
 type Img = object | string
 // interface ImgOption {
@@ -38,18 +77,19 @@ type Img = object | string
 // }
 
 // 创建图片
+// 所有图片对象
 let imgObjList = []
 // const createPicture = (img: Img, option?: ImgOption): void => {
 const createPicture = (img: Img): void => {
   if (typeof img === 'string') {
-    new fabric.Image.fromURL(img, function (oImg) {
-      canvas.add(oImg)
+    new fabric.Image.fromURL(img, function (oImg: object) {
       imgObjList.push(oImg)
+      canvasCreate(oImg)
     })
   } else {
-    new fabric.Image.fromObject(img, function (oImg) {
-      canvas.add(oImg)
+    new fabric.Image.fromObject(img, function (oImg: object) {
       imgObjList.push(oImg)
+      canvasCreate(oImg)
     })
   }
 }
@@ -81,11 +121,61 @@ interface TextOption {
 }
 
 // 创建文字
+// 所有文字对象
 let textObjList = []
 const createText = (text: Text, option?: TextOption): void => {
   const textObj = new fabric.IText(text, option)
   textObjList.push(textObj)
-  canvas.add(textObj)
+  canvasCreate(textObj)
+  // 获取所有对象
+}
+
+/* =========================== 交互集 =========================== */
+
+// 创建对象
+const canvasCreate = (obj: object): void => {
+  canvas.add(obj)
+  canvasAllIObj = canvas.getObjects()
+}
+
+// 清除对象
+const removeObj = (obj: object): void => {
+  canvas.remove(obj)
+  canvasAllIObj = canvas.getObjects()
+}
+
+// 清除所有对象
+const clear = () => {
+  canvas.clear()
+  canvas = null
+  operateObj = null
+  canvasAllIObj = null
+  textObjList = []
+  imgObjList = []
+}
+
+// 设置活动对象在画布中的层级
+const setLevel = (obj: object, n: 1 | -1 | 'top' | 'bottom'): void => {
+  switch (n) {
+    case 1:
+      canvas.bringForward(obj) //向上跳一层：
+
+      break
+    case -1:
+      canvas.sendBackwards(obj) //向下跳一层
+
+      break
+    case 'top':
+      canvas.bringToFront(obj) //向上跳顶层：
+
+      break
+    case 'bottom':
+      canvas.sendToBack(obj) //向下跳底层：
+
+      break
+    default:
+      break
+  }
 }
 </script>
 
