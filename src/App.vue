@@ -37,7 +37,7 @@ const ToolCore = defineAsyncComponent(() => import('@/components/ToolCore.vue'))
   .content {
     flex: 1;
     border-radius: 18px;
-    height: calc(100% - 4.8rem);
+    height: 100%;
     margin: 2.4rem;
     overflow: auto;
   }

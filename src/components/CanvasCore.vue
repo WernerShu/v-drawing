@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { fabric } from 'fabric'
-import { onMounted, reactive, nextTick } from 'vue'
+import { onMounted, reactive } from 'vue'
 
 // 画布对象
 let canvas = null
@@ -23,8 +23,8 @@ let canvasAllIObj = null
 
 // 画布基础信息
 const canvasBaseInfo = reactive({
-  canvasWidth: 800,
-  canvasHeight: 800
+  canvasWidth: 1400,
+  canvasHeight: 1400
 })
 
 /* =========================== 初始化 =========================== */
